@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/thinkey/static/css/main.86bdd389.chunk.css",
-    "main.js": "/thinkey/static/js/main.c5ad4393.chunk.js",
-    "main.js.map": "/thinkey/static/js/main.c5ad4393.chunk.js.map",
+    "main.css": "/thinkey/static/css/main.35c7ca72.chunk.css",
+    "main.js": "/thinkey/static/js/main.b4014727.chunk.js",
+    "main.js.map": "/thinkey/static/js/main.b4014727.chunk.js.map",
     "runtime-main.js": "/thinkey/static/js/runtime-main.4bc2ef90.js",
     "runtime-main.js.map": "/thinkey/static/js/runtime-main.4bc2ef90.js.map",
     "static/js/2.3ff5c9b2.chunk.js": "/thinkey/static/js/2.3ff5c9b2.chunk.js",
     "static/js/2.3ff5c9b2.chunk.js.map": "/thinkey/static/js/2.3ff5c9b2.chunk.js.map",
     "index.html": "/thinkey/index.html",
-    "static/css/main.86bdd389.chunk.css.map": "/thinkey/static/css/main.86bdd389.chunk.css.map",
+    "static/css/main.35c7ca72.chunk.css.map": "/thinkey/static/css/main.35c7ca72.chunk.css.map",
     "static/js/2.3ff5c9b2.chunk.js.LICENSE.txt": "/thinkey/static/js/2.3ff5c9b2.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.4bc2ef90.js",
     "static/js/2.3ff5c9b2.chunk.js",
-    "static/css/main.86bdd389.chunk.css",
-    "static/js/main.c5ad4393.chunk.js"
+    "static/css/main.35c7ca72.chunk.css",
+    "static/js/main.b4014727.chunk.js"
   ]
 }
