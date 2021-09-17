@@ -6,6 +6,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { authService, firebaseInstance } from "fbase";
 import AuthForm from "components/AuthForm";
+import logo from "components/thinkey1.png";
 
 const Auth = () => {
     const onSocialClick = async (event) => {
@@ -23,10 +24,10 @@ const Auth = () => {
 
     return (
         <div className="authContainer">
-            <FontAwesomeIcon
-                icon={faTwitter}
-                color={"#04AAFF"}
-                size="3x"
+            <img
+                src={ logo }
+                width="45"
+                height="50"
                 style={{ marginBottom: 30 }}
             />
             <AuthForm/>
