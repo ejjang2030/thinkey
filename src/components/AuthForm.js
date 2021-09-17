@@ -25,7 +25,7 @@ const AuthForm = () => {
 
             if (newAccount) {
                 // create newAccount
-                data = await authService.createUserWithEmailAndPasswordAndPassword(
+                data = await authService.createUserWithEmailAndPassword(
                     email,
                     password
                 );
@@ -34,6 +34,7 @@ const AuthForm = () => {
                 data = await authService.signInWithEmailAndPassword(email, password);
             }
         } catch (error) {
+            console.log(error);
             setError(error.message);
         }
     };
