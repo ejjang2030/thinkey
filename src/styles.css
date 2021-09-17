@@ -296,7 +296,7 @@ body {
   
   .profileInfo {
     color: #04aaff;
-    margin-left: 10;
+    margin-left: 40;
     display: flex;
     flex-direction: column;
     align-items: center;
