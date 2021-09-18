@@ -46,7 +46,6 @@ const Photo = ({ userObj }) => {
 
     return (
         <form>
-            <img src={imgSrc} className={`image-preview ${imgSrc && "image-preview-show"}`}/>
             <div className="file-dropper">
                 {fileName}
                 <input 
