@@ -74,11 +74,9 @@ const Photo = ({ userObj }) => {
                 </div>
                 <button type="submit" onClick={uploadImage} className="image-uploader">Upload Image</button>
             </form>
-            <div className="photolines">
+            <div>
                 { photos && photos.map(doc => (
-                    <div key={doc.id}>
-                        <img src={doc.url}/>
-                    </div>
+                    <img className="photo" src={doc.url}/>
                 ))}
             </div>
         </div>
