@@ -22,6 +22,7 @@ const Profile = ({ userObj, refreshUser }) => {
         event.preventDefault();
         if (userObj.displayName !== newDisplayName) {
             await userObj.updateProfile({ displayName: newDisplayName });
+            // await dbService.doc(`thinkey/${userObj.id}`).update({ displayName: newDisplayName });
             refreshUser();
         }
     };

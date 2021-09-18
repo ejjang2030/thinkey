@@ -1,4 +1,4 @@
-import { dbService } from "fbase";
+import { dbService, authService } from "fbase";
 import { useEffect, useState } from "react";
 import Thinkey from "components/Thinkey";
 import ThinkeyFactory from "components/ThinkeyFactory";
@@ -18,7 +18,7 @@ const Home = ({ userObj }) => {
         });
     }, []);
 
-    
+    console.log("currentUser", authService.currentUser);
 
     return (
         <div className="container">
