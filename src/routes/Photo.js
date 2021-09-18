@@ -54,7 +54,7 @@ const Photo = ({ userObj }) => {
                     accept="image/*"
                     onChange={imageSelectHandler}/>
             </div>
-            <button type="submit" onClick={uploadImage} style={{ width: "100%", height: "30px", borderRadius: "3px" }}>Upload Image</button>
+            <button type="submit" onClick={uploadImage} className="image-uploader">Upload Image</button>
         </form>
     ); 
 };
