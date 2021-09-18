@@ -34,6 +34,7 @@ const Photo = ({ userObj }) => {
         const metadata = { contentType: file.type };
         const task = storageService.ref().child(`${userObj.uid}/${uuidv4()}`).put(file, metadata);
         console.log("userid :", userObj.uid);
+        console.log("imgSrc", imgSrc);
         task.then(snapshot => snapshot.ref.getDownloadURL())
             .then(url => {
                 console.log("url", url);

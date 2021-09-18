@@ -342,8 +342,8 @@ body {
   }  
 
   .image-preview-show {
-    width: 100px;
-    height: 100px;
+    width: 75%;
+    height: 75%;
     transition: 0.5s;
     opacity: 100%;
   }
