@@ -1,6 +1,6 @@
-import { storageService } from "fbase";
-import { v4 as uuidv4 } from "uuid";
-import React, { useState } from "react";
+import { storageService, dbService, timestamp } from "fbase";
+import { stringify, v4 as uuidv4 } from "uuid";
+import React, { useState, useEffect } from "react";
 import "./../styles.css";
 
 const Photo = ({ userObj }) => {
@@ -8,7 +8,21 @@ const Photo = ({ userObj }) => {
     const [file, setFile] = useState(null);
     const [imgSrc, setImgSrc] = useState(null);
     const [fileName, setFileName] = useState(defaultFileName);
-    
+    const [photos, setPhotos] = useState([]);
+
+    useEffect(() => {
+        var listRef = storageService.ref(`${userObj.uid}/`);
+        dbService.collection("albums")
+            .orderBy("createdAt", "desc")
+            .onSnapshot((snap) => {
+                let documents = [];
+                snap.forEach(doc => {
+                    documents.push({...doc.data(), id: doc.id})
+                });
+                setPhotos(documents);
+            });
+    })
+
     const imageSelectHandler = (event) => {
         const imageFile = event.target.files[0];
         setFile(imageFile);
@@ -24,7 +38,7 @@ const Photo = ({ userObj }) => {
         }
     }; 
 
-    const uploadImage = (event) => {
+    const uploadImage = async (event) => {
         event.preventDefault();
         console.log("file : ", file);
         if (file === null) {
@@ -33,29 +47,41 @@ const Photo = ({ userObj }) => {
         }
         const metadata = { contentType: file.type };
         const task = storageService.ref().child(`${userObj.uid}/${uuidv4()}`).put(file, metadata);
+        const collectionRef = dbService.collection("albums");
+        const createdAt = timestamp();
         console.log("userid :", userObj.uid);
         console.log("imgSrc", imgSrc);
         task.then(snapshot => snapshot.ref.getDownloadURL())
             .then(url => {
                 console.log("url", url);
                 alert("사진 업로드가 완료되었습니다!");
+                collectionRef.add({ url, createdAt, userId: userObj.uid });
                 const image = document.querySelector("#image");
                 image.src = url;
             });
     };
 
     return (
-        <form>
-            <div className="file-dropper">
-                {fileName}
-                <input 
-                    id="image" 
-                    type="file" 
-                    accept="image/*"
-                    onChange={imageSelectHandler}/>
+        <div>
+            <form>
+                <div className="file-dropper">
+                    {fileName}
+                    <input 
+                        id="image" 
+                        type="file" 
+                        accept="image/*"
+                        onChange={imageSelectHandler}/>
+                </div>
+                <button type="submit" onClick={uploadImage} className="image-uploader">Upload Image</button>
+            </form>
+            <div className="photolines">
+                { photos && photos.map(doc => (
+                    <div key={doc.id}>
+                        <img src={doc.url}/>
+                    </div>
+                ))}
             </div>
-            <button type="submit" onClick={uploadImage} className="image-uploader">Upload Image</button>
-        </form>
+        </div>
     ); 
 };
 
