@@ -341,8 +341,11 @@ body {
     opacity: 0%;
   }
 
-  .image-preview-show {
-    width: 75%;
-    transition: 0.5s;
-    opacity: 100%;
+  @media all {
+    .image-preview-show {
+      width: 75%;
+      transition: 0.5s;
+      opacity: 100%;
+    }
   }
+  
