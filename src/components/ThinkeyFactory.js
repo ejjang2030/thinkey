@@ -23,6 +23,7 @@ const ThinkeyFactory = ({ userObj }) => {
             text: thinkey,
             createdAt: Date.now(),
             creatorId: userObj.uid,
+            displayName: userObj.displayName,
             attachmentUrl,
         });
         setThinkey("");
@@ -53,7 +54,7 @@ const ThinkeyFactory = ({ userObj }) => {
             reader.readAsDataURL(theFile);
         }
     };
-    
+
     const onClearAttachment = () => setAttachment("");
 
     return (
