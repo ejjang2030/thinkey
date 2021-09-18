@@ -2,8 +2,8 @@ import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Auth from "components/Auth";
 import Home from "routes/Home";
 import Profile from "routes/Profile";
-import Photos from "routes/Photos";
 import Navigation from "./Navigation";
+import Photo from "routes/Photo";
 
 const AppRouter = ({ isLoggedIn, userObj, refreshUser }) => {
     return (
@@ -25,7 +25,7 @@ const AppRouter = ({ isLoggedIn, userObj, refreshUser }) => {
                             <Home userObj={userObj}/>
                         </Route>
                         <Route exact path="/photos">
-                            <Photos/>
+                            <Photo userObj={userObj}/>
                         </Route>
                         <Route exact path="/profile">
                             <Profile refreshUser={refreshUser} userObj={userObj}/>
