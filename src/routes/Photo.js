@@ -8,7 +8,6 @@ const Photo = ({ userObj }) => {
     const [file, setFile] = useState(null);
     const [imgSrc, setImgSrc] = useState(null);
     const [fileName, setFileName] = useState(defaultFileName);
-    const [percent, setPercent] = useState(0);
     
     const imageSelectHandler = (event) => {
         const imageFile = event.target.files[0];
