@@ -331,17 +331,17 @@ body {
     color: white;
     transition: 0.5s;
   }
-
-  .image-preview {
-    width: 0%;
-    display: block;
-    margin: 0 auto 20px auto;
-    border-radius: 10px;
-    border: 5px solid grey;
-    opacity: 0%;
-  }
-
+  
   @media all {
+    .image-preview {
+      width: 0%;
+      display: block;
+      margin: 0 auto 20px auto;
+      border-radius: 10px;
+      border: 5px solid grey;
+      opacity: 0%;
+    }  
+
     .image-preview-show {
       width: 75%;
       transition: 0.5s;
