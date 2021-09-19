@@ -181,31 +181,42 @@ body {
   }
   
   .thinkey {
+    flex-direction: column;
     margin-bottom: 20px;
     background-color: #04aaff;
     width: 100%;
     max-width: 320px;
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
     position: relative;
     display: flex;
     flex-direction: column;
+    flex: 1;
     color: #ffffff;
+    box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 0.75);
   }
   
-  .thinkey h4 {
-    font-size: 20px;
+  .thinkey h2 {
+    font-size: 13px;
     font-weight: bold;
   }
   
   .thinkey img {
-    right: -10px;
-    top: 20px;
-    position: absolute;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    margin-top: 10px;
+    right: 10px;
+    top: 8px;
+    max-width: 320px;
+    width: auto;
+    height: auto;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .thinkey h4 {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-size: 10px;
   }
   
   .thinkey__actions {

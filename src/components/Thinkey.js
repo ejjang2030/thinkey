@@ -2,6 +2,7 @@ import { dbService, storageService } from "fbase";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faPencilAlt } from "@fortawesome/free-solid-svg-icons";
+import "styles/mainstyles.css";
 
 const Thinkey = ({ thinkeyObj, isOwner }) => {
     const [editing, setEditing] = useState(false);
@@ -51,11 +52,11 @@ const Thinkey = ({ thinkeyObj, isOwner }) => {
                 </>
             ) : (
                 <div>
-                    <h4>{thinkeyObj.text}</h4>
-                    <h6 style={{ marginTop: 20, fontSize: 10 }}>{thinkeyObj.displayName}</h6>
+                    <h2>{thinkeyObj.displayName}</h2>
                     {thinkeyObj.attachmentUrl && (
-                        <img src={thinkeyObj.attachmentUrl} width="50px" height="50px"/>
+                        <img src={thinkeyObj.attachmentUrl}/>
                     )}
+                    <h4>{thinkeyObj.text}</h4>
                     {isOwner && (
                         <div className="thinkey__actions">
                             <span onClick={onDeleteClick}>
