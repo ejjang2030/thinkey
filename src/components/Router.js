@@ -4,6 +4,7 @@ import Home from "routes/Home";
 import Profile from "routes/Profile";
 import Navigation from "./Navigation";
 import Photo from "routes/Photo";
+import Messenger from "routes/Messenger";
 
 const AppRouter = ({ isLoggedIn, userObj, refreshUser }) => {
     return (
@@ -26,6 +27,9 @@ const AppRouter = ({ isLoggedIn, userObj, refreshUser }) => {
                         </Route>
                         <Route exact path="/photos">
                             <Photo userObj={userObj}/>
+                        </Route>
+                        <Route exact path="/messenger">
+                            <Messenger/>
                         </Route>
                         <Route exact path="/profile">
                             <Profile refreshUser={refreshUser} userObj={userObj}/>

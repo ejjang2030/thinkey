@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faFacebookMessenger } from "@fortawesome/free-brands-svg-icons";
 import { faUser, faPhotoVideo } from "@fortawesome/free-solid-svg-icons";
 import logo from "components/thinkey1.png";
 
@@ -21,6 +21,14 @@ const Navigation = ({ userObj }) => {
                         <FontAwesomeIcon icon={ faPhotoVideo } color={"#04aaff"} size="2x"/>
                         <span style={{ marginTop: 10 }}>
                             사진첩
+                        </span>
+                    </Link>
+                </li>
+                <li style={{ marginRight: 30 }}>
+                    <Link to="/messenger" className="profileInfo">
+                        <FontAwesomeIcon icon={ faFacebookMessenger } color={"#04aaff"} size="2x"/>
+                        <span style={{ marginTop: 10 }}>
+                            메시지
                         </span>
                     </Link>
                 </li>

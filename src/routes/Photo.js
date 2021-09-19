@@ -1,7 +1,7 @@
 import { storageService, dbService, timestamp } from "fbase";
 import { stringify, v4 as uuidv4 } from "uuid";
 import React, { useState, useEffect } from "react";
-import "./../styles.css";
+import "styles/mainstyles.css";
 
 const Photo = ({ userObj }) => {
     const defaultFileName = "이미지 파일을 업로드 해주세요.";
