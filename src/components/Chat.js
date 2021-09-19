@@ -4,14 +4,19 @@ import MoreVert from "@material-ui/icons/MoreVert";
 import MicIcon from "@material-ui/icons/Mic";
 import React, { useEffect, useState } from "react";
 import "styles/Chat.css";
+import { realtimeService } from "fbase";
 
-const Chat = () => {
+const Chat = ({ userObj }) => {
     const [seed, setSeed] = useState("");
     const [input, setInput] = useState("");
 
 
     useEffect(() => {
         setSeed(Math.floor(Math.random() * 5000));
+        realtimeService.ref('users/1234').set({
+            username: "123455",
+            email: "ddee@ddf.com"
+        });
     }, []);
 
     const sendMessage = (e) => {
