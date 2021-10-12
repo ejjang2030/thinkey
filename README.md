@@ -6,4 +6,4 @@ Thinkey is Twitter (mini)clone with React and Firebase
 https://ejjang2030.github.io/thinkey/#/
 
 ## 사용 기술
-Javscript, HTML, CSS, React, Firebase 
+Javscript, HTML, CSS, React, Firebase, Node.js
